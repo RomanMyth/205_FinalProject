@@ -34,7 +34,6 @@ class ApplicationControllerAPI extends Controller
         $num = 0;
 
         while (!$accept_id){
-            $product = $request->all();
             $num = rand(0, 999);
             $application = Applications::findOrFail($num);
             if(isset($application)){
