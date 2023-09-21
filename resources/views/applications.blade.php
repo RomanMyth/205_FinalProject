@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Job Applications</title>
     <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         h1{
             display:flex;
             justify-content:center;
@@ -14,13 +19,14 @@
             display:flex;
             justify-content:center;
             border-collapse:collapse;
+            width: 100%;
         }
         #app_table td, th {
             border: 1px solid;
             padding:5px 0px;
         }
         #app_table tbody{
-            width:75%;
+            width:100%;
             display:flex;
             flex-direction:column;
             justify-content:space-evenly;
@@ -29,12 +35,12 @@
             display:flex;
         }
         .app_table_row th{
-            width:12%;
+            width:12.5%;
             display:flex;
             justify-content:center;
         }
         .app_table_row td{
-            width:12%;
+            width:12.5%;
             display:flex;
             justify-content:center;
         }
