@@ -74,7 +74,7 @@
                 <form action ='{{ url("api/applications") }}'method = "POST">
                     <div id="secondblast">
                         <label>ID:</label>
-                        <input disabled readonly value="<?php echo rand(1, 999)?>" name='application_id'><br>
+                        <input readonly value="<?php echo rand(1, 999)?>" name='application_id'><br>
                     </div>
                     <div class="raidus">
                         <label>First Name: </label>
