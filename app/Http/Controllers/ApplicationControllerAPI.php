@@ -13,7 +13,10 @@ class ApplicationControllerAPI extends Controller
      */
     public function index()
     {
-        //
+        //returns all 
+        $applications = JobApplications::all();
+
+        return view('applications',['applications'=>$applications]);
     }
 
     /**
@@ -31,6 +34,7 @@ class ApplicationControllerAPI extends Controller
         ]);
 
         $products = JobApplications::all();
+        // !DOES NOT WORK!
         if (is_array($products)){
             for ($i = 0; $i < count($products); $i++){
                 if($products[$i]->application_id == $request->application_id){
@@ -44,7 +48,7 @@ class ApplicationControllerAPI extends Controller
                 return redirect('/');
             }
         }
-
+        // !END OF NON WORKING CODE BLOCK!
 
         $product = $request->all();
 
