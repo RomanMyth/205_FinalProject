@@ -34,26 +34,16 @@ class ApplicationControllerAPI extends Controller
         ]);
 
         $products = JobApplications::all();
-        // !DOES NOT WORK!
-        if (is_array($products)){
-            for ($i = 0; $i < count($products); $i++){
-                if($products[$i]->application_id == $request->application_id){
-                    return redirect('/');
-                }
-            }
-        }
-        elseif(count($products) == 0){}
-        else{
-            if($products->application_id == $request->application_id){
+        $form_application = $request->all();
+
+        foreach ($products as $product){
+            if($product->application_id == $request->application_id){
                 return redirect('/');
             }
         }
-        // !END OF NON WORKING CODE BLOCK!
 
-        $product = $request->all();
-
-        JobApplications::create($product);
-        return $product;
+        JobApplications::create($form_application);
+        return $form_application;
     }
 
     /**
