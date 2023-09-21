@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Applications;
+use App\Models\JobApplications;
 
 class ApplicationControllerAPI extends Controller
 {
@@ -30,20 +30,25 @@ class ApplicationControllerAPI extends Controller
            'years_of_experience'=>'required',
         ]);
 
-        $accept_id = false;
-        $num = 0;
-
-        while (!$accept_id){
-            $num = rand(0, 999);
-            $application = Applications::findOrFail($num);
-            if(isset($application)){
-                return $accept_id = true;
+        $products = JobApplications::all();
+        if (is_array($products)){
+            for ($i = 0; $i < count($products); $i++){
+                if($products[$i]->application_id == $request->application_id){
+                    return redirect('/');
+                }
+            }
+        }
+        elseif(count($products) == 0){}
+        else{
+            if($products->application_id == $request->application_id){
+                return redirect('/');
             }
         }
 
+
         $product = $request->all();
-        $product = array_splice($product, 0, 0, $num);
-        Applications::create($product);
+
+        JobApplications::create($product);
         return $product;
     }
 

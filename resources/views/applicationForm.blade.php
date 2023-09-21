@@ -3,7 +3,8 @@
 
     </style>
     <body> 
-        <form method = "POST">
+        <form action ='{{ url("api/applications") }}'method = "POST">
+            <input readonly value="<?php echo rand(1, 999)?>" name='application_id'><br>
             <label>First Name: </label>
             <input type = "text" name = "firstname"><br>
 
