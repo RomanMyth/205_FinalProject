@@ -43,7 +43,7 @@ class ApplicationControllerAPI extends Controller
         }
 
         JobApplications::create($form_application);
-        return $form_application;
+        return redirect('/api/applications');
     }
 
     /**
