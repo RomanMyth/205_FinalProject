@@ -10,10 +10,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #B2ECFF;
         }
         h1{
             display:flex;
             justify-content:center;
+            width: 100%;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            color: white;
+            background-color:  #530EC4;
+            margin-bottom:0%;
+
         }
         #app_table{
             display:flex;
@@ -22,8 +30,9 @@
             width: 100%;
         }
         #app_table td, th {
-            border: 1px solid;
+            border: 2px solid #419BBD ;
             padding:5px 0px;
+            background-color: #B3CAD6;
         }
         #app_table tbody{
             width:100%;
@@ -54,7 +63,7 @@
             <th>Application ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Email</th>
+            <th class="email">Email</th>
             <th>Address</th>
             <th>Education Level</th>
             <th>Years of Experience</th>
